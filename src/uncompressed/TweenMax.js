@@ -5537,7 +5537,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
  */
  		var _reqAnimFrame = window.requestAnimationFrame,
 			_cancelAnimFrame = window.cancelAnimationFrame,
-			_getTime = Date.now || function() {return new Date().getTime();},
+			_getTime = function() { andy.utils.now(); },
 			_lastUpdate = _getTime();
 
 		//now try to determine the requestAnimationFrame and cancelAnimationFrame functions and if none are found, we'll use a setTimeout()/clearTimeout() polyfill.
