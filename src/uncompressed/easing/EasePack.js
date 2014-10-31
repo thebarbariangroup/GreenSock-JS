@@ -16,6 +16,8 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 
 	_gsScope._gsDefine("easing.Back", ["easing.Ease"], function(Ease) {
 		
+		andy.utils.randomSeed( andy.utils.now() );	// seed the random generator
+
 		var w = (_gsScope.GreenSockGlobals || _gsScope),
 			gs = w.com.greensock,
 			_2PI = Math.PI * 2,
@@ -146,7 +148,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				strength = (typeof(vars.strength) === "number") ? vars.strength * 0.4 : 0.4,
 				x, y, bump, invX, obj, pnt;
 			while (--i > -1) {
-				x = randomize ? Math.random() : (1 / points) * i;
+				x = randomize ? andy.utils.random() : (1 / points) * i;
 				y = template ? template.getRatio(x) : x;
 				if (taper === "none") {
 					bump = strength;
@@ -163,7 +165,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					bump = invX * invX * 0.5 * strength;
 				}
 				if (randomize) {
-					y += (Math.random() * bump) - (bump * 0.5);
+					y += (andy.utils.random() * bump) - (bump * 0.5);
 				} else if (i % 2) {
 					y += bump * 0.5;
 				} else {
