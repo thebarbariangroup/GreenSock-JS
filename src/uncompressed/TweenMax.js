@@ -4929,6 +4929,8 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
  */
 	_gsScope._gsDefine("easing.Back", ["easing.Ease"], function(Ease) {
 		
+		andy.utils.randomSeed( andy.utils.now() );	// seed the random generator
+		
 		var w = (_gsScope.GreenSockGlobals || _gsScope),
 			gs = w.com.greensock,
 			_2PI = Math.PI * 2,
